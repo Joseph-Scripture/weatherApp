@@ -1,0 +1,13 @@
+body{
+    background-color: #F3E2D4;
+}
+select{
+    border-radius: 5px;
+    outline: none;
+
+}
+option{
+    /* padding: 3px;
+    border-radius: 6px;
+    border: none; */
+}
