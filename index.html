@@ -7,14 +7,22 @@
     <title>Weather App</title>
 </head>
 <body>
+    <div class="container">
+         <h2>Weather App</h2>
+         <input type="text" class="search" placeholder="Enter Location">
+         
+        <select name="temp" id="temp">
+        <option value="celsius">Celsius</option>
+        <option value="kelvin">Kelvin</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <button type="button">Get Weather</button>
+        <p class="location"></p>
+        <p class="weather"></p>
+        <p class="temperature"></p>
 
-
-    <select name="temp" id="temp">
-    <option value="celsius">Celsius</option>
-    <option value="kelvin">Kelvin</option>
-    <option value="fahrenheit">Fahrenheit</option>
-    </select>
-
+    </div>
+   
     
 
     <script src="scripts/scripts.js"></script>

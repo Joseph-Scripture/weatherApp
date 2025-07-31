@@ -1,13 +1,85 @@
 body{
-    background-color: #F3E2D4;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+
+   
 }
-select{
+div{
+   border: 1px solid white;
+   
+  width: 200px;
+  margin: 0 auto; /* This centers it */
+  box-shadow: 0px 0 2px palevioletred;
+  
+}
+
+
+input{
+    /* display: block; */
+    width: 90%;
+    margin: 5px 0 10px 0;
+    padding:5px;
+    border: 1px solid blue;
+}
+input:focus{
+    border-color: blueviolet;
+
+}
+option {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  font-size: 14px;
+}
+select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  width: 95%;
+}
+
+
+button, input{
+    display: block;
     border-radius: 5px;
     outline: none;
 
+   
 }
-option{
-    /* padding: 3px;
-    border-radius: 6px;
-    border: none; */
+button{
+    border: 1px solid white;
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    /* margin-left: auto;
+     */
+     margin: 10px auto;
 }
+h2{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: burlywood;
+    text-align: center;
+}
+input, select{
+    margin-left: 5px;
+}
+.description{
+    color: whitesmoke;
+    padding: 4px;
+}
+.error{
+    color: red;
+    border: none;
+    margin-bottom: 0;
+}
+/* .weather{
+    border: none;
+}
+.location{
+    border: none;
+} */
