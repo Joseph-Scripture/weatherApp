@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Getting location
     const locationHistory = document.createElement('p');
     const locationData = data.resolvedAddress;
-    locationHistory.textContent = locationData;
+    locationHistory.textContent = `location:${locationData}`;
     locationDiv.appendChild(locationHistory)
     // displaying weather description on page
     const textParagraph = document.createElement('p');

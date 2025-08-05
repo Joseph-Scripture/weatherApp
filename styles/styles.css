@@ -1,13 +1,14 @@
 body{
     background: linear-gradient(to right, #74ebd5, #ACB6E5);
-
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh; 
 }
 div{
    border: 1px solid white;
    
   width: 200px;
-  margin: 0 auto; /* This centers it */
   box-shadow: 0px 0 2px palevioletred;
   
 }
