@@ -1,86 +1,110 @@
+*{
+    box-sizing: border-box;
+}
 body{
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: #FAF7F3;
+}
+:root{
+    --bg-c :#5271EE;
+}
+.or{
+    position: relative;
+    /* top: 0; */
+    top: 0;
+}
+hr{
+    position: absolute;
+}
+main{
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 600px;
+    background-color: #E6F2FE;
+}
+h1{
+    margin-top: 0;
+    background-color: var(--bg-c);
+    color: white;
+    text-align: center;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh; 
+    border-radius: 5px;
 }
-div{
-   border: 1px solid white;
-   
-  width: 200px;
-  box-shadow: 0px 0 2px palevioletred;
+button.use-location{
+    background-color: gray;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+input{
+    width: 100%;
+}
+.current-weather{
+    background-color: var(--bg-c);
+    /* height: 90px; */
+    width: 100%;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    height: 175px;
+}
+input+button, p+button{
+    background-color: var(--bg-c);
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    margin-top: 8px;
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+
   
 }
-
-
+.first-content{
+      margin: 15px;
+}
 input{
-    /* display: block; */
-    width: 90%;
-    margin: 5px 0 10px 0;
-    padding:5px;
-    border: 1px solid blue;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
 }
 input:focus{
-    border-color: blueviolet;
-
-}
-option {
-  background-color: white;
-  color: black;
-  padding: 5px;
-  font-size: 14px;
-}
-select {
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  color: #333;
-  cursor: pointer;
-  width: 95%;
-}
-
-
-button, input{
-    display: block;
-    border-radius: 5px;
+    border: 2px solid salmon;
     outline: none;
-
-   
 }
-button{
-    border: 1px solid white;
-    background-color: blue;
-    padding: 5px;
+
+hr+p{
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-    color: white;
-    /* margin-left: auto;
-     */
-     margin: 10px auto;
+
 }
 h2{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: burlywood;
-    text-align: center;
+    color:black;
+    margin: 25px;
 }
-input, select{
-    margin-left: 5px;
+.other-days{
+    color: black;
+    display: flex;
+    gap: 60px;
+
 }
-.description{
-    color: whitesmoke;
-    padding: 4px;
-}
-.error{
-    color: red;
-    border: none;
-    margin-bottom: 0;
-}
-/* .weather{
-    border: none;
+.first-day, .second-day, .third-day, .fourth-day{
+    width: 200px;
+    background-color: gray;
+    padding: 15px;
+    border-radius: 6px;
 }
 .location{
-    border: none;
-} */
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,76 +1,63 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const select = document.querySelector('#temp');
-  const search = document.querySelector('.search');
-  const bttn = document.querySelector('button');
-  const div = document.querySelector('.container');
-  const weather = document.querySelector('.weather');
-  const locationDiv = document.querySelector('.location');
-  const tempParagraph = document.querySelector('.temperature');
-
-  let currentTempF = null; 
-
-  bttn.addEventListener('click', async () => {
-    const city = search.value;
-    weather.innerHTML = '';
-    locationDiv.innerHTML = '';
-
-  try{
-    weather.innerHTML = 'Loading...'
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/today?unitGroup=us&key=8J2F3EZRRNKNQWZQQVF6L9KB6`, { mode: "cors" });
-    const data = await response.json();
-
-    // Getting location
-    const locationHistory = document.createElement('p');
-    const locationData = data.resolvedAddress;
-    locationHistory.textContent = `location:${locationData}`;
-    locationDiv.appendChild(locationHistory)
-    // displaying weather description on page
-    const textParagraph = document.createElement('p');
-    const description = await data.description;
-    textParagraph.textContent = description;
-    textParagraph.classList.add('description')
-    weather.innerHTML = '';
-    weather.appendChild(textParagraph);
-    // Temperature section 
-    currentTempF = data.days[0].temp;
-
-    
-   
-
-
-
-    updateTempDisplay();
-  }catch{
-    const errorParagraph = document.createElement('p');
-    errorParagraph.classList.add('error');
-    errorParagraph.textContent = 'Enter a valid location to get weather';
-    weather.innerHTML = '';
-    weather.appendChild(errorParagraph)
-    
-  }
-});
-    select.addEventListener('change', updateTempDisplay);
-
-    function updateTempDisplay() {
-        if (currentTempF === null) return;
-
-        const unit = select.value;
-        let displayTemp = currentTempF;
-        let label = 'Fahrenheit';
-
-        if (unit === 'celsius') {
-            displayTemp = ((currentTempF - 32) * 5) / 9;
-            label = 'Celsius';
-        } else if (unit === 'kelvin') {
-            displayTemp = ((currentTempF - 32) * 5) / 9 + 273.15;
-            label = 'Kelvin';
-        }
-
-        tempParagraph.textContent = `Temperature: ${displayTemp.toFixed(2)} °${label[0]}`;
-}
-
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.querySelector('input');
+    const searchBtn = document.querySelector('.search');
+    const currentLocation = document.querySelector('.use-location');
+    const dateEls = document.querySelectorAll('.other-days .date');
+    const tempEls = document.querySelectorAll('.other-days .temp');
+    const windEls = document.querySelectorAll('.other-days .wind');
+    const humidityEls = document.querySelectorAll('.other-days .humidity');
+    const main = document.querySelector('main')
   
-  });
+
+
+    async function getWeather() {
+      try{
+      const location = input.value.trim();
+      const weatherData = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next5days?key=8J2F3EZRRNKNQWZQQVF6L9KB6&include=days&elements=temp,resolvedAddress,datetime,windspeed,humidity`,{mode:'cors'})
+      const info = await weatherData.json()
+      const locationData = info.resolvedAddress;
+     
+      const daysInfo = info.days
+      console.log(daysInfo)
+      document.querySelector('.location').textContent = `Location: ${locationData}`;
+      document.querySelector('.temperature').textContent = `Temperature: ${daysInfo[0].temp}°F`;
+      document.querySelector('.wind').textContent = `Wind: ${daysInfo[0].windspeed} mph`;
+      document.querySelector('.humidity').textContent = `Humidity: ${daysInfo[0].humidity}%`;
+
+      daysInfo.slice(1, 5).forEach((day, index) => {
+        dateEls[index].textContent = `Date: ${day.datetime}`;
+        tempEls[index].textContent = `Temp: ${day.temp}°F`;
+        windEls[index].textContent = `Wind: ${day.windspeed} mph`;
+        humidityEls[index].textContent = `Humidity: ${day.humidity}%`;
+    });
+
+      }catch(error){
+        alert('Enter a valid location')
+        
+
+
+      }
+    }
+
+    searchBtn.addEventListener('click', () => {
+      if(input.value === ''){
+        alert('Enter a location');
+        
+        main.classList.add('invisible');
+
+      }else{
+        getWeather()
+      }
+      
+    })
+
+    
+
+  })
+
+
+
+
+
 
 

@@ -7,22 +7,62 @@
     <title>Weather App</title>
 </head>
 <body>
-    <div class="container">
-         <h2>Weather App</h2>
-         <input type="text" class="search" placeholder="Enter Location">
-         
-        <select name="temp" id="temp">
-        <option value="celsius">Celsius</option>
-        <option value="kelvin">Kelvin</option>
-        <option value="fahrenheit">Fahrenheit</option>
-        </select>
-        <button type="button">Get Weather</button>
-        <span class="location"></span>
-        <span class="weather"></span>
-        <span class="temperature"></span>
+    <main>
+        <div class="header">
+            <h1>Weather Dashboard</h1>
+        </div>
+        <div class="container">
+            <div class="first-content">
+                <h2>Enter a City name</h2>
+                <input type="text" placeholder="E.g New York, London, Tokyo">
+                <button type="submit" class="search">Search</button>
+                <hr>
+               
+            </div>
+            <div class="current-weather">
+                <p class="location">Location:</p>
+                <p class="temperature temp">Temperature</p>
+                <p class="wind wind">Wind</p>
+                <p class="humidity">humidity</p>
+                <div class="text">
+                    <h2>4-Day Forecast</h2>
+                </div>
+                <div class="other-days">
+                    <div class="first-day">
+                        <p class="date">Date</p>
+                        <p class="condition-img"></p>
+                        <p class="temp">Tempt</p>
+                        <p class="wind">Wind</p>
+                        <p class="humidity">humidity</p>
+                    </div>
+                    <div class="second-day">
+                         <p class="date">Date</p>
+                        <p class="condition-img"></p>
+                        <p class="temp">temp</p>
+                        <p class="wind">wind</p>
+                        <p class="humidity">humidity</p>
+                    </div>
+                    <div class="third-day">
+                         <p class="date">date</p>
+                        <p class="condition-img"></p>
+                        <p class="temp">temp</p>
+                        <p class="wind">wind</p>
+                        <p class="humidity">humidity</p>
+                    </div>
+                    <div class="fourth-day">
+                        <p class="date">date</p>
+                        <p class="condition-img"></p>
+                        <p class="temp">temp</p>
+                        <p class="wind">wind</p>
+                        <p class="humidity">humidity</p>
+                    </div>
+                </div>
+            </div
 
-    </div>
-   
+       
+      
+    
+    </main>
     
 
     <script src="scripts/scripts.js"></script>
