@@ -7,6 +7,10 @@
     <title>Weather App</title>
 </head>
 <body>
+    <div id="notificationPopup" class="notification">
+        <span class="close-btn" id="closeNotification">&times;</span>
+        <p id="notificationMessage"></p>
+    </div>
     <main>
         <div class="header">
             <h1>Weather Dashboard</h1>
@@ -17,7 +21,6 @@
                 <input type="text" placeholder="E.g New York, London, Tokyo">
                 <button type="submit" class="search">Search</button>
                 <hr>
-               
             </div>
             <div class="current-weather">
                 <p class="location">Location:</p>
